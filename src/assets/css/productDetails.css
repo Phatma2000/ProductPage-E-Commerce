@@ -1,0 +1,26 @@
+.title_details {
+  font-family: Arial, Helvetica, sans-serif;
+}
+.desc_details {
+  font-family: Arial, Helvetica, sans-serif;
+}
+.price_details {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 50px;
+  color: red;
+}
+
+.add_btn {
+  border: none;
+  border-radius: 5px;
+  padding: 10px 30px;
+  margin-top: 25px;
+  background-color: antiquewhite;
+  margin-left: 10px;
+}
+
+.add_btn:hover {
+  cursor: pointer;
+  background-color: rgb(247, 180, 93);
+  transition: all 0.6s;
+}

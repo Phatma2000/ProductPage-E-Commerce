@@ -1,0 +1,29 @@
+.logo {
+  width: 120px;
+  height: 110px;
+}
+
+.paragh {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.search-text {
+  border: none;
+  border: 2px solid antiquewhite;
+  padding: 10px 15px;
+  outline: none;
+  margin-right: 10px;
+}
+
+.icon {
+  font-size: 22px;
+  margin-right: 10px;
+}
+
+.icon:hover {
+  cursor: pointer;
+}
+
+

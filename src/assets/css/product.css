@@ -1,0 +1,36 @@
+.card {
+  width: 250px;
+  height: 350px;
+  box-shadow: 1px 4px 3px lightblue;
+  border-radius: 10px;
+  margin: 15px;
+  text-align: center;
+}
+
+.image {
+}
+
+.title {
+  text-align: center;
+  height: 50px;
+}
+.price {
+  text-align: center;
+}
+
+.card:hover {
+  cursor: pointer;
+}
+
+.btn {
+  border: none;
+  border-radius: 5px;
+  padding: 10px 30px;
+  background-color: antiquewhite;
+}
+
+.btn:hover {
+  cursor: pointer;
+  background-color: rgb(247, 180, 93);
+  transition: all 0.6s;
+}

@@ -4,9 +4,19 @@ import Logo from "../assets/img/logo.png";
 import { CiLight, CiShoppingBasket } from "react-icons/ci";
 import { FaMoon } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import Badge from "@mui/material/Badge";
+import { useDispatch, useSelector } from "react-redux";
+import { setDrawer } from "../redux/slices/basketSlice";
+
 const Header = () => {
   const [theme, setTheme] = useState(false);
+
+  const dispatch = useDispatch();
+
   const navigate = useNavigate();
+
+  const { products, setD } = useSelector((store) => store.basket);
+
   useEffect(() => {
     const root = document.getElementById("root");
     if (theme) {
@@ -21,6 +31,7 @@ const Header = () => {
   const changeTheme = () => {
     setTheme((prev) => !prev);
   };
+
   return (
     <div
       style={{
@@ -45,16 +56,23 @@ const Header = () => {
           type="text"
           placeholder="Search something"
         />
-        <div>
+        <div style={{ display: "flex" }}>
           {theme ? (
             <FaMoon className="icon" onClick={changeTheme} />
           ) : (
             <CiLight className="icon" onClick={changeTheme} />
           )}
-          <CiShoppingBasket className="icon" />
+
+          <Badge
+            onClick={() => dispatch(setDrawer())}
+            badgeContent={products.length}
+            color="error"
+          >
+            <CiShoppingBasket style={{ marginRight: "6px" }} className="icon" />
+          </Badge>
         </div>
       </div>
-    </div>
+    </div >
   );
 };
 

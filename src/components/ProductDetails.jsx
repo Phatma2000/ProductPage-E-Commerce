@@ -7,6 +7,7 @@ import {
 } from "../redux/slices/productSlice";
 import "../assets/css/productDetails.css";
 import { CiCircleMinus, CiCirclePlus } from "react-icons/ci";
+import { addToBasket, calculateAmount } from "../redux/slices/basketSlice";
 const ProductDetails = () => {
   const { id } = useParams();
   const { products, selectedProduct, loading } = useSelector(
@@ -47,6 +48,19 @@ const ProductDetails = () => {
   //         });
   // };
 
+  const addBasket = () => {
+    const payload = {
+      id,
+      price,
+      image,
+      title,
+      description,
+      count,
+    };
+    dispatch(addToBasket(payload));
+    dispatch(calculateAmount())
+  };
+
   if (loading) {
     return <div>Loading...</div>;
   }
@@ -74,7 +88,9 @@ const ProductDetails = () => {
         </div>
 
         <div>
-          <button className="add_btn">Add</button>
+          <button onClick={addBasket} className="add_btn">
+            Add
+          </button>
         </div>
       </div>
     </div>

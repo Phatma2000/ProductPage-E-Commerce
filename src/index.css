@@ -1,6 +1,7 @@
 body {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 .flex-row {
@@ -17,6 +18,17 @@ body {
   justify-content: center;
 }
 
-#root{
-    /* height: 100vh; */
+#root {
+  /* height: 100vh; */
+}
+
+.close_btn {
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  color: #fff;
+  background-color: rgb(218, 156, 23);
+  cursor: pointer;
+  position: fixed;
+  bottom: 0;
 }
